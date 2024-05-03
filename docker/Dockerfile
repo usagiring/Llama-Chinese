@@ -8,7 +8,7 @@ RUN apt install -y git vim git-lfs
 WORKDIR /root/Llama-Chinese
 
 # 从git上克隆llama-chinese仓库
-RUN git clone https://github.com/LlamaFamily/Llama-Chinese.git /root/Llama-Chinese 
+RUN git clone https://github.com/usagiring/Llama-Chinese.git /root/Llama-Chinese 
 
 # tsinghua source
 RUN mkdir -p ~/.pip
