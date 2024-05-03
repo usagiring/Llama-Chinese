@@ -7,8 +7,8 @@ RUN apt install -y git vim git-lfs
 #设置工作目录
 WORKDIR /root/Llama-Chinese
 
-# 从git上克隆llama-chinese仓库
-RUN git clone https://github.com/usagiring/Llama-Chinese.git /root/Llama-Chinese 
+#克隆Hugging Face仓库
+RUN  git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat
 
 # tsinghua source
 RUN mkdir -p ~/.pip
@@ -17,8 +17,8 @@ RUN echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" > ~/.p
 # 使用pip安装requirements.txt
 RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn -r requirements.txt
 
-#克隆Hugging Face仓库
-RUN  git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat
+# 从git上克隆llama-chinese仓库
+RUN git clone https://github.com/usagiring/Llama-Chinese.git /root/Llama-Chinese 
 
 #开启7860端口
 EXPOSE 7860
